@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evera Official.pk</title>
+    <meta
+      name="description"
+      content="Evera Official.pk offers premium handmade soaps crafted for freshness, skin care, and everyday wellness."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand-wrap">
+          <img src="./evera-images/evera-logo.png" alt="Evera Official.pk logo" class="brand-logo" />
+          <div>
+            <p class="brand-name">Evera Official.pk</p>
+            <span class="brand-tag">Pure care, fresh glow</span>
+          </div>
+        </div>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#products">Products</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow" id="heroEyebrow">Naturally refreshing</p>
+            <h1 id="heroTitle">Premium soaps for everyday wellness.</h1>
+            <p class="hero-text" id="heroDescription">
+              Crafted to cleanse, refresh, and restore your skin with a delightful blend of
+              natural ingredients and comforting fragrances.
+            </p>
+            <div class="pricing-box" id="heroPricing">
+              <span>Small Soap: Rs. 250</span>
+              <span>Large Soap: Rs. 350</span>
+            </div>
+            <a href="#products" class="cta-btn">Shop Now</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="products" class="products">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Our collection</p>
+            <h2>Choose your favorite product</h2>
+          </div>
+
+          <div class="category-filter">
+            <button class="category-btn active" data-category="soap">Soaps</button>
+            <button class="category-btn" data-category="lip-balm">Lip Balms</button>
+            <button class="category-btn" data-category="scrub">Scrubs</button>
+            <button class="category-btn" data-category="creams">Creams</button>
+          </div>
+
+          <div class="product-grid" id="productGrid">
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="container about-wrap">
+          <div class="about-card">
+            <p class="eyebrow">Why Evera</p>
+            <h2>Skin-loving ingredients. Everyday freshness.</h2>
+            <p>
+              Evera soaps are made to care for your skin while leaving behind a refreshing,
+              uplifting clean feeling. Each bar is designed to suit your daily routine with a
+              balance of nourishment and scent.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="product-modal" id="productModal" aria-hidden="true">
+      <div class="product-modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button type="button" class="modal-close" aria-label="Close details">×</button>
+        <div class="modal-image-wrap">
+          <img id="modalImage" src="" alt="" />
+        </div>
+        <div class="modal-body">
+          <p class="modal-eyebrow">Evera Soap</p>
+          <h3 id="modalTitle">Soap</h3>
+          <p id="modalSubtitle" class="modal-subtitle"></p>
+          <div id="modalPrice" class="modal-price"></div>
+          <div class="modal-section">
+            <h4>Features</h4>
+            <ul id="modalFeatures"></ul>
+          </div>
+          <div class="modal-section">
+            <h4>Benefits</h4>
+            <ul id="modalBenefits"></ul>
+          </div>
+          <div class="modal-section two-col">
+            <div>
+              <h4>Fragrance</h4>
+              <p id="modalFragrance"></p>
+            </div>
+            <div>
+              <h4>Skin Feel</h4>
+              <p id="modalSkinFeel"></p>
+            </div>
+          </div>
+          <div class="modal-section">
+            <h4>Short Description</h4>
+            <p id="modalDescription"></p>
+          </div>
+          <div class="modal-actions">
+            <!-- Buy It Now removed per request; only Add to Cart is shown -->
+            <button id="addToCartBtn" class="order-now-btn" type="button">Add to Cart</button>
+
+            <div id="sizePrompt" class="size-prompt" style="display:none; margin-top:12px;" role="dialog" aria-label="Choose size and quantity">
+              <p style="margin:0 0 8px 0; font-weight:700;">Choose size, quantity & your details</p>
+              <div class="size-options" style="display:flex; gap:8px; margin-bottom:8px;">
+                <button id="sizeSmallBtn" class="size-btn" type="button" data-size="Small">Small</button>
+                <button id="sizeLargeBtn" class="size-btn" type="button" data-size="Large">Large</button>
+              </div>
+
+              <div style="display:flex; gap:8px; align-items:center; margin-bottom:10px;">
+                <label for="sizeQuantity" style="margin:0; font-weight:600; color:var(--muted);">Qty</label>
+                <input id="sizeQuantity" type="number" min="1" value="1" style="width:72px; padding:8px; border:1px solid var(--line); border-radius:8px;" />
+              </div>
+
+              <div style="margin-top:6px;">
+                <label for="customerName" style="display:block; font-weight:600; margin-bottom:6px;">Your name</label>
+                <input id="customerName" type="text" placeholder="Full name" style="width:100%; padding:10px; border:1px solid var(--line); border-radius:8px; margin-bottom:8px;" />
+
+                <label for="customerWhatsApp" style="display:block; font-weight:600; margin-bottom:6px;">WhatsApp number</label>
+                <input id="customerWhatsApp" type="tel" placeholder="03XXXXXXXXX" style="width:100%; padding:10px; border:1px solid var(--line); border-radius:8px; margin-bottom:6px;" />
+                <div id="customerWhatsHint" style="font-size:0.85rem; color:#b23; display:none; margin-bottom:8px;">Enter a Pakistani number like 03XXXXXXXXX or +92XXXXXXXXXX</div>
+
+                <label for="customerAddress" style="display:block; font-weight:600; margin-bottom:6px;">Delivery address</label>
+                <textarea id="customerAddress" rows="2" placeholder="Delivery address" style="width:100%; padding:10px; border:1px solid var(--line); border-radius:8px; margin-bottom:8px;"></textarea>
+
+                <label for="customerNotes" style="display:block; font-weight:600; margin-bottom:6px;">Additional notes (optional)</label>
+                <textarea id="customerNotes" rows="2" placeholder="Any order notes" style="width:100%; padding:10px; border:1px solid var(--line); border-radius:8px;"></textarea>
+              </div>
+
+              <div style="margin-top:10px; display:flex; gap:8px; justify-content:flex-end;">
+                <button id="confirmAddBtn" class="size-btn" type="button">Add to Cart</button>
+                <button id="confirmBuyBtn" class="size-btn" type="button" style="display:none;">Place Order</button>
+              </div>
+
+              <button id="sizeCancelBtn" class="size-cancel" type="button" style="display:block; margin-top:8px;">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="contact" class="footer">
+      <div class="container footer-inner">
+        <p>Evera Official.pk</p>
+        <p>Fresh care for your skin</p>
+        <a href="https://wa.me/923187718189" target="_blank" rel="noopener noreferrer" class="whatsapp-link">WhatsApp: 0318 7718189</a>
+      </div>
+    </footer>
+
+    <a
+      href="https://wa.me/923187718189"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="whatsapp-float"
+      aria-label="Chat on WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true" class="whatsapp-icon">
+        <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.45 0 .07 5.38.07 12c0 2.12.55 4.18 1.59 5.99L0 24l6.2-1.63A11.9 11.9 0 0 0 12.06 24c6.61 0 11.99-5.38 11.99-12 0-3.2-1.25-6.22-3.53-8.52ZM12.06 21.8c-1.9 0-3.76-.51-5.38-1.47l-.39-.23-3.68.97 1-3.57-.25-.39a9.84 9.84 0 0 1-1.5-5.24c0-5.46 4.45-9.9 9.95-9.9 2.65 0 5.15 1.03 7.02 2.9A9.82 9.82 0 0 1 12.06 21.8Zm5.38-7.38c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.66.08-.3-.15-1.28-.47-2.44-1.5-.9-.8-1.5-1.79-1.68-2.09-.18-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.62-.92-2.2-.24-.57-.49-.5-.67-.5h-.57c-.2 0-.52.08-.8.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.86 1.21 3.06c.15.2 2.09 3.2 5.06 4.48.71.31 1.26.49 1.68.62.7.22 1.34.19 1.85.12.56-.08 1.77-.72 2.01-1.42.24-.7.24-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/>
+      </svg>
+    </a>
+
+    <script>
+      // Product data structure
+      const categoryInfo = {
+        soap: {
+          eyebrow: 'Naturally refreshing',
+          title: 'Premium soaps for everyday wellness.',
+          description: 'Crafted to cleanse, refresh, and restore your skin with a delightful blend of natural ingredients and comforting fragrances.',
+          pricing: { small: 250, large: 350 }
+        },
+        'lip-balm': {
+          eyebrow: 'Smooth & hydrated',
+          title: 'Lip Balms (coming soon)',
+          description: 'Our lip balms are formulated with natural oils and butters to keep your lips moisturized, protected, and beautifully soft all day long.',
+          pricing: null
+        },
+        scrub: {
+          eyebrow: 'Exfoliate & refresh',
+          title: 'Scrubs (coming soon)',
+          description: 'Experience the power of gentle exfoliation with our natural scrubs designed to remove dead skin cells and reveal your skin\'s natural radiance.',
+          pricing: null
+        },
+
+        creams: {
+          eyebrow: 'Nourish & soothe',
+          title: 'Creams (coming soon)',
+          description: 'Rich, nourishing creams coming soon — leave this space for lotions and creams designed to hydrate and repair skin.',
+          pricing: null
+        }
+      };
+
+      const products = {
+        soap: [
+          {
+            name: 'Charcoal Soap',
+            subtitle: 'Deep Clean & Detox',
+            small: '250',
+            large: '350',
+            description: 'A rich cleansing bar designed to lift away dirt, excess oil, and impurities while leaving the skin feeling fresh, smooth, and balanced.',
+            features: 'Deep pore cleansing, Oil-control support, Gentle detoxifying action',
+            benefits: 'Helps reduce dullness, Refreshes skin, Keeps face feeling clean and light',
+            fragrance: 'Fresh earthy scent with a clean finish',
+            skinfeel: 'Smooth, fresh, and light after every wash',
+            image: './evera-images/charcoal-soap.jpeg'
+          },
+          {
+            name: 'Coffee Soap',
+            subtitle: 'Exfoliating & Energizing',
+            small: '250',
+            large: '350',
+            description: 'A stimulating formula that helps remove dead skin cells and refresh tired skin for a cleaner, more awake look.',
+            features: 'Natural exfoliation, Skin polishing effect, Invigorating care',
+            benefits: 'Improves texture, Encourages glow, Helps skin feel revitalized',
+            fragrance: 'Warm roasted coffee aroma',
+            skinfeel: 'Soft, polished, and refreshed',
+            image: './evera-images/coffee-soap.jpeg'
+          },
+          {
+            name: 'De-Tan Soap',
+            subtitle: 'Brightening & Skin Renewal',
+            small: '250',
+            large: '350',
+            description: 'A brightening bar that helps reduce dullness and supports a healthier-looking complexion with a fresh, smooth finish.',
+            features: 'Brightening action, Skin renewal support, Daily glow boost',
+            benefits: 'Helps improve radiance, Evens skin tone look, Leaves skin smoother',
+            fragrance: 'Fresh citrus floral blend',
+            skinfeel: 'Clean, soft, and visibly brighter',
+            image: './evera-images/de-tan-soap.jpeg'
+          },
+          {
+            name: 'Lemon Soap',
+            subtitle: 'Citrus Glow & Freshness',
+            small: '250',
+            large: '350',
+            description: 'A bright and refreshing citrus soap made to awaken the senses while leaving the skin feeling clean, lively, and smooth.',
+            features: 'Citrus freshness, Skin-brightening care, Daily soft cleanse',
+            benefits: 'Adds a fresh feel, Helps skin look healthier, Uplifts mood and routine',
+            fragrance: 'Vivid lemon aroma with a zesty finish',
+            skinfeel: 'Clean, lively, and refreshed',
+            image: './evera-images/lemon-soap.png'
+          },
+          {
+            name: 'Menthol Soap',
+            subtitle: 'Cooling & Invigorating',
+            small: '250',
+            large: '350',
+            description: 'A refreshing menthol bar that gives a cool, energizing feel while helping you feel clean, relaxed, and awake.',
+            features: 'Cooling sensation, Refreshing wash, Daily revive effect',
+            benefits: 'Helps calm heat and tiredness, Leaves skin fresh, Encourages a wake-up feel',
+            fragrance: 'Clean menthol freshness',
+            skinfeel: 'Cool, clean, and revitalized',
+            image: './evera-images/menthol-soap.jpeg'
+          },
+          {
+            name: 'Orange Soap',
+            subtitle: 'Vitamin Boost & Radiance',
+            small: '250',
+            large: '350',
+            description: 'A lively orange-infused soap that adds a bright, fresh touch to your skincare routine while helping your skin feel smooth and nourished.',
+            features: 'Vitamin-rich feel, Radiance support, Smooth cleansing',
+            benefits: 'Improves skin glow, Leaves skin soft, Refreshes morning routine',
+            fragrance: 'Sweet citrus burst with a sunny finish',
+            skinfeel: 'Smooth, clean, and radiant',
+            image: './evera-images/orange-soap.jpeg'
+          },
+          {
+            name: 'Moroccan Blue Soap',
+            subtitle: 'Exotic & Soothing',
+            small: '250',
+            large: '350',
+            description: 'An exotic Moroccan-inspired soap with a luxurious blend designed to soothe and pamper your skin with rich, traditional ingredients.',
+            features: 'Exotic scent blend, Soothing care, Luxurious texture',
+            benefits: 'Calms and soothes skin, Provides deep moisture, Creates spa-like experience',
+            fragrance: 'Rich Moroccan spice and floral notes',
+            skinfeel: 'Luxurious, soft, and deeply nourished',
+            image: './evera-images/moroccan-blue-soap.png'
+          },
+          {
+            name: 'Zafrani Soap',
+            subtitle: 'Premium Golden Glow',
+            small: '250',
+            large: '350',
+            description: 'A premium saffron-infused soap crafted to enhance skin radiance and provide a luxurious cleansing experience with warm, golden tones.',
+            features: 'Premium saffron essence, Radiance-boosting, Rich moisturizing',
+            benefits: 'Enhances natural glow, Soothes and nourishes, Adds luxury to routine',
+            fragrance: 'Warm saffron with subtle floral undertones',
+            skinfeel: 'Smooth, silky, and radiantly golden',
+            image: './evera-images/zafrani-soap.png'
+          }
+        ],
+        'lip-balm': [],
+                'scrub': [],
+                'creams': []
+              };
+
+      let currentCategory = 'soap';
+
+      const modal = document.getElementById('productModal');
+      const modalImage = document.getElementById('modalImage');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalSubtitle = document.getElementById('modalSubtitle');
+      const modalPrice = document.getElementById('modalPrice');
+      const modalFeatures = document.getElementById('modalFeatures');
+      const modalBenefits = document.getElementById('modalBenefits');
+      const modalFragrance = document.getElementById('modalFragrance');
+      const modalSkinFeel = document.getElementById('modalSkinFeel');
+      const modalDescription = document.getElementById('modalDescription');
+      const closeModalBtn = document.querySelector('.modal-close');
+      const productGrid = document.getElementById('productGrid');
+      const categoryButtons = document.querySelectorAll('.category-btn');
+
+      function splitList(value) {
+        return value
+          .split(',')
+          .map((item) => item.trim())
+          .filter(Boolean)
+          .map((item) => '<li>' + item + '</li>')
+          .join('');
+      }
+
+      function renderProducts(category) {
+        productGrid.innerHTML = '';
+        const categoryProducts = products[category] || [];
+        
+        if (categoryProducts.length === 0) {
+          const comingSoon = document.createElement('div');
+          comingSoon.className = 'coming-soon';
+          comingSoon.innerHTML = `
+            <p class="coming-soon-text">Coming Soon</p>
+            <p class="coming-soon-subtext">We're working on bringing you amazing new products in this category.</p>
+          `;
+          productGrid.appendChild(comingSoon);
+          return;
+        }
+        
+        categoryProducts.forEach((product, index) => {
+          const article = document.createElement('article');
+          article.className = 'product-card';
+          article.setAttribute('tabindex', '0');
+          article.setAttribute('role', 'button');
+          article.setAttribute('aria-label', 'View details for ' + product.name);
+          
+          article.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" />
+            <div class="product-info">
+              <h3>${product.name}</h3>
+              <p class="subtitle">${product.subtitle}</p>
+              <div class="card-actions" style="display:flex; gap:8px; margin-top:8px;">
+                <button class="details-btn" type="button">View details</button>
+                <button class="card-buy-btn" type="button">Add to Cart</button>
+              </div>
+            </div>
+          `;
+          
+          // Open modal when clicking the card background (keeps current behavior)
+          article.addEventListener('click', () => openModal(product));
+
+          // Button-specific handlers — stop propagation so parent handler doesn't double-fire
+          const detailsBtn = article.querySelector('.details-btn');
+          const buyCardBtn = article.querySelector('.card-buy-btn');
+
+          if (detailsBtn) {
+            detailsBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              openModal(product);
+            });
+          }
+
+          if (buyCardBtn) {
+            buyCardBtn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              // open cart panel quick-add for this product
+              currentProduct = product;
+              // open cart panel and show quick add
+              const panel = document.getElementById('cartPanel');
+              if (panel) panel.style.display = 'block';
+              // render quick add details
+              const quickAdd = document.getElementById('quickAdd');
+              const quickName = document.getElementById('quickProductName');
+              const qQty = document.getElementById('quickQty');
+              const qSmall = document.getElementById('quickSizeSmall');
+              const qLarge = document.getElementById('quickSizeLarge');
+              if (quickAdd) quickAdd.style.display = 'block';
+              if (quickName) quickName.textContent = product.name + ' — ' + product.subtitle;
+              if (qQty) qQty.value = 1;
+              if (qSmall) qSmall.classList.remove('selected-size');
+              if (qLarge) qLarge.classList.remove('selected-size');
+            });
+          }
+
+          article.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              openModal(product);
+            }
+          });
+          
+          article.style.animation = 'popIn 0.7s ease forwards';
+          article.style.animationDelay = (index * 0.08) + 's';
+          
+          productGrid.appendChild(article);
+        });
+      }
+
+      let currentProduct = null;
+
+      function openModal(product) {
+        currentProduct = product;
+        modalImage.src = product.image;
+        modalImage.alt = product.name;
+        modalTitle.textContent = product.name;
+        modalSubtitle.textContent = product.subtitle;
+        // Show prices only for the soaps category — do not display sizes/prices for lip balms, scrubs, or creams
+        if (currentCategory === 'soap' && product.small != null && product.large != null) {
+          modalPrice.innerHTML = '<span>Small: Rs. ' + product.small + '</span><span>Large: Rs. ' + product.large + '</span>';
+        } else {
+          modalPrice.innerHTML = '';
+        }
+        modalFeatures.innerHTML = splitList(product.features);
+        modalBenefits.innerHTML = splitList(product.benefits);
+        modalFragrance.textContent = product.fragrance;
+        modalSkinFeel.textContent = product.skinfeel;
+        modalDescription.textContent = product.description;
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+      }
+
+      // Cart & size selection state
+      let cart = [];
+      let pendingAction = null; // 'buy' or 'add'
+      let selectedSize = null;
+      let customerInfo = { name: '', address: '' };
+
+      function showSizePrompt() {
+        const prompt = document.getElementById('sizePrompt');
+        if (!prompt) return;
+        // reset selection and quantity whenever shown
+        selectedSize = null;
+        const smallBtn = document.getElementById('sizeSmallBtn');
+        const largeBtn = document.getElementById('sizeLargeBtn');
+        if (smallBtn) smallBtn.classList.remove('selected-size');
+        if (largeBtn) largeBtn.classList.remove('selected-size');
+        const qtyEl = document.getElementById('sizeQuantity');
+        if (qtyEl) qtyEl.value = 1;
+        prompt.style.display = 'block';
+      }
+
+      function hideSizePrompt() {
+        const prompt = document.getElementById('sizePrompt');
+        if (!prompt) return;
+        prompt.style.display = 'none';
+        pendingAction = null;
+        selectedSize = null;
+      }
+
+      function selectSize(size) {
+        selectedSize = size;
+        const smallBtn = document.getElementById('sizeSmallBtn');
+        const largeBtn = document.getElementById('sizeLargeBtn');
+        if (smallBtn) smallBtn.classList.toggle('selected-size', size === 'Small');
+        if (largeBtn) largeBtn.classList.toggle('selected-size', size === 'Large');
+      }
+
+
+      function addCurrentProductToCart() {
+        if (!currentProduct) return;
+        if (!selectedSize) {
+          alert('Please choose a size (Small or Large)');
+          return;
+        }
+        const qtyEl = document.getElementById('sizeQuantity');
+        const qty = qtyEl ? Math.max(1, parseInt(qtyEl.value || '1')) : 1;
+        const unitPrice = (selectedSize === 'Small' ? Number(currentProduct.small) : Number(currentProduct.large)) || 0;
+        cart.push({
+          name: currentProduct.name,
+          subtitle: currentProduct.subtitle,
+          size: selectedSize,
+          qty,
+          unitPrice,
+          image: currentProduct.image
+        });
+        hideSizePrompt();
+        updateCartUI();
+      }
+
+      // buyNow removed — single Add to Cart flow only
+
+      function closeModal() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+
+      function updateHeroContent(category) {
+        const info = categoryInfo[category];
+        if (info) {
+          document.getElementById('heroEyebrow').textContent = info.eyebrow;
+          document.getElementById('heroTitle').textContent = info.title;
+          document.getElementById('heroDescription').textContent = info.description;
+          // show pricing only when provided (creams intentionally has null pricing)
+          const heroPricingEl = document.getElementById('heroPricing');
+          if (info.pricing && info.pricing.small != null && info.pricing.large != null) {
+            heroPricingEl.innerHTML = `<span>Small: Rs. ${info.pricing.small}</span><span>Large: Rs. ${info.pricing.large}</span>`;
+          } else {
+            heroPricingEl.innerHTML = '';
+          }
+        }
+      }
+
+      // Category filter event listeners
+      categoryButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          categoryButtons.forEach((b) => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentCategory = btn.dataset.category;
+          updateHeroContent(currentCategory);
+          renderProducts(currentCategory);
+        });
+      });
+
+      closeModalBtn.addEventListener('click', closeModal);
+
+      const addToCartBtnEl = document.getElementById('addToCartBtn');
+      const sizeSmallBtn = document.getElementById('sizeSmallBtn');
+      const sizeLargeBtn = document.getElementById('sizeLargeBtn');
+      const sizeCancelBtn = document.getElementById('sizeCancelBtn');
+      const confirmAddBtn = document.getElementById('confirmAddBtn');
+      const placeOrderBtn = document.getElementById('confirmBuyBtn');
+      const qtyEl = document.getElementById('sizeQuantity');
+
+      if (addToCartBtnEl) addToCartBtnEl.addEventListener('click', () => {
+        // open cart panel quick-add for this product in modal
+        if (!currentProduct) return; // no product context
+        const panel = document.getElementById('cartPanel');
+        if (panel) panel.style.display = 'block';
+        const quickAdd = document.getElementById('quickAdd');
+        const quickName = document.getElementById('quickProductName');
+        const qQty = document.getElementById('quickQty');
+        const qSmall = document.getElementById('quickSizeSmall');
+        const qLarge = document.getElementById('quickSizeLarge');
+        if (quickAdd) quickAdd.style.display = 'block';
+        if (quickName && currentProduct) quickName.textContent = currentProduct.name + ' — ' + currentProduct.subtitle;
+        if (qQty) qQty.value = 1;
+        if (qSmall) qSmall.classList.remove('selected-size');
+        if (qLarge) qLarge.classList.remove('selected-size');
+      });
+
+      const customerNameEl = document.getElementById('customerName');
+      const customerWhatsAppEl = document.getElementById('customerWhatsApp');
+      const customerAddressEl = document.getElementById('customerAddress');
+      const customerNotesEl = document.getElementById('customerNotes');
+
+      // sanitize inputs: name -> letters & spaces only; whatsapp -> digits only
+      if (customerNameEl) {
+        customerNameEl.addEventListener('input', (e) => {
+          const cleaned = e.target.value.replace(/[^A-Za-z\s]/g, '');
+          if (e.target.value !== cleaned) e.target.value = cleaned;
+          updatePlaceOrderVisibility();
+        });
+      }
+      const sanitizeNumber = (el) => {
+        if (!el) return;
+        el.addEventListener('input', (e) => {
+          const cleaned = e.target.value.replace(/\D+/g, '');
+          if (e.target.value !== cleaned) e.target.value = cleaned;
+          updatePlaceOrderVisibility();
+        });
+      };
+      sanitizeNumber(customerWhatsAppEl);
+
+      // Normalize/validate Pakistani numbers
+      function normalizePakNumber(raw) {
+        const digits = (raw || '').replace(/\D+/g, '');
+        // local: 03XXXXXXXXX (11 digits)
+        if (/^03\d{9}$/.test(digits)) return '92' + digits.slice(1); // convert to 92XXXXXXXXXX
+        // international without plus: 92XXXXXXXXXX (12 digits, must start with 92 and next digit 3)
+        if (/^92[3]\d{9}$/.test(digits)) return digits;
+        return null;
+      }
+
+      if (customerWhatsAppEl) {
+        const hint = document.getElementById('customerWhatsHint');
+        customerWhatsAppEl.addEventListener('input', (e) => {
+          const norm = normalizePakNumber(e.target.value);
+          if (hint) hint.style.display = norm ? 'none' : 'block';
+        });
+      }
+
+      if (sizeSmallBtn) sizeSmallBtn.addEventListener('click', () => selectSize('Small'));
+      if (sizeLargeBtn) sizeLargeBtn.addEventListener('click', () => selectSize('Large'));
+      if (sizeCancelBtn) sizeCancelBtn.addEventListener('click', hideSizePrompt);
+
+      function validateCustomerFields() {
+        const name = customerNameEl ? customerNameEl.value.trim() : '';
+        const whatsappRaw = customerWhatsAppEl ? customerWhatsAppEl.value.trim() : '';
+              const address = customerAddressEl ? customerAddressEl.value.trim() : '';
+              const normalized = normalizePakNumber(whatsappRaw);
+              // require name, valid Pakistani WhatsApp number, and non-empty address
+              return name.length > 0 && normalized !== null && address.length > 0;
+            }
+
+      function updatePlaceOrderVisibility() {
+        const placeBtn = document.getElementById('confirmBuyBtn');
+        if (!placeBtn) return;
+        if (validateCustomerFields()) {
+          placeBtn.style.display = 'inline-block';
+        } else {
+          placeBtn.style.display = 'none';
+        }
+      }
+
+      // wire inputs to visibility
+      [customerNameEl, customerWhatsAppEl, customerAddressEl].forEach((el) => {
+        if (el) el.addEventListener('input', updatePlaceOrderVisibility);
+      });
+
+      if (confirmAddBtn) confirmAddBtn.addEventListener('click', () => {
+        // validate
+        if (!selectedSize) { alert('Please choose a size'); return; }
+        const name = customerNameEl ? customerNameEl.value.trim() : '';
+        const whatsapp = customerWhatsAppEl ? customerWhatsAppEl.value.trim() : '';
+        const address = customerAddressEl ? customerAddressEl.value.trim() : '';
+        const notes = customerNotesEl ? customerNotesEl.value.trim() : '';
+        const normalizedWhats = typeof normalizePakNumber === 'function' ? normalizePakNumber(whatsapp) : null;
+              if (!name || !normalizedWhats || !address) { alert('Please enter your name, a valid Pakistani WhatsApp number, and delivery address'); return; }
+        // save customer info for checkout (store normalized WhatsApp, e.g. 923XXXXXXXXX)
+        customerInfo = { name, whatsapp: normalizedWhats, address, notes };
+        // add item to cart
+        addCurrentProductToCart();
+      });
+
+      if (placeOrderBtn) placeOrderBtn.addEventListener('click', () => {
+        if (!selectedSize) { alert('Please choose a size'); return; }
+        const name = customerNameEl ? customerNameEl.value.trim() : '';
+        const whatsapp = customerWhatsAppEl ? customerWhatsAppEl.value.trim() : '';
+        const address = customerAddressEl ? customerAddressEl.value.trim() : '';
+        const notes = customerNotesEl ? customerNotesEl.value.trim() : '';
+        const normalizedWhats = typeof normalizePakNumber === 'function' ? normalizePakNumber(whatsapp) : null;
+              if (!name || !normalizedWhats || !address) { alert('Please enter your name, a valid Pakistani WhatsApp number, and delivery address'); return; }
+        // ensure current selection is added to cart before placing order
+        const qty = qtyEl ? Math.max(1, parseInt(qtyEl.value || '1')) : 1;
+        // save customer info
+        customerInfo = { name, whatsapp: normalizedWhats, address, notes };
+        // add current product to cart (so it is included) then checkout
+        addCurrentProductToCart();
+        checkoutCart();
+      });
+
+      // Create cart toggle button and cart panel (with quick-add area)
+      function createCartUI() {
+        const cartToggle = document.createElement('button');
+        cartToggle.id = 'cartToggle';
+        cartToggle.className = 'cart-toggle';
+        cartToggle.setAttribute('aria-label', 'Open cart');
+        cartToggle.innerHTML = 'Cart (<span id="cartBadge">0</span>)';
+        document.body.appendChild(cartToggle);
+
+        const cartPanel = document.createElement('div');
+        cartPanel.id = 'cartPanel';
+        cartPanel.className = 'cart-panel';
+        cartPanel.style.display = 'none';
+        cartPanel.innerHTML = `
+          <div class="cart-header">
+            <strong>Cart</strong>
+            <button id="closeCartBtn" class="panel-close" aria-label="Close cart">×</button>
+          </div>
+
+          <!-- Quick add area (appears when a product is selected) -->
+          <div id="quickAdd" style="padding:12px; border-bottom:1px solid var(--line); display:none;">
+            <div id="quickProductName" style="font-weight:700; margin-bottom:8px;"></div>
+            <div style="display:flex; gap:8px; margin-bottom:8px; align-items:center;">
+              <button id="quickSizeSmall" class="size-btn" type="button">Small</button>
+              <button id="quickSizeLarge" class="size-btn" type="button">Large</button>
+              <label style="margin-left:6px; font-weight:600; color:var(--muted);">Qty</label>
+              <input id="quickQty" type="number" min="1" value="1" style="width:72px; padding:8px; border:1px solid var(--line); border-radius:8px; margin-left:6px;" />
+              <div style="flex:1"></div>
+              <button id="quickAddBtn" class="size-btn" type="button">Add</button>
+            </div>
+          </div>
+
+          <div id="cartItems" class="cart-items"></div>
+          <div class="cart-footer" style="display:flex; gap:8px; align-items:center; justify-content:space-between; padding:12px;">
+            <div id="cartTotal" style="font-weight:700; color:var(--muted)">Total: Rs. 0</div>
+            <div>
+              <button id="checkoutBtn" class="buy-now-btn">Checkout</button>
+            </div>
+          </div>
+        `;
+        document.body.appendChild(cartPanel);
+
+        cartToggle.addEventListener('click', toggleCartPanel);
+        document.getElementById('closeCartBtn').addEventListener('click', toggleCartPanel);
+        document.getElementById('checkoutBtn').addEventListener('click', openCustomerPanel);
+
+        // customer panel (overlay) — hidden until checkout
+        const customerPanel = document.createElement('div');
+        customerPanel.id = 'customerPanel';
+        customerPanel.className = 'product-modal single-column';
+        customerPanel.style.display = 'none';
+        customerPanel.innerHTML = `
+          <div class="product-modal-content" role="dialog" aria-modal="true">
+            <div style="padding:20px; width:100%; max-height:80vh; overflow:auto;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <strong>Confirm your order</strong>
+                <button id="closeCustomerBtn" class="panel-close" aria-label="Close customer details">×</button>
+              </div>
+
+              <div id="customerCartSummary" style="margin-top:12px; padding:10px 0; border-bottom:1px solid var(--line);">
+                <div style="font-weight:700; margin-bottom:8px;">Order summary</div>
+                <div id="customerCartItems" style="display:block; gap:8px;"></div>
+                <div id="customerCartTotal" style="font-weight:700; margin-top:8px; color:var(--muted)">Total: Rs. 0</div>
+              </div>
+
+              <div style="margin-top:12px;">
+                <label style="display:block; font-weight:600; margin-top:8px;">Name</label>
+                <input id="custName" type="text" style="width:100%; padding:10px; border:1px solid var(--line); border-radius:8px;" />
+
+                <label style="display:block; font-weight:600; margin-top:8px;">WhatsApp Number</label>
+                <input id="custWhatsApp" type="tel" style="width:100%; padding:10px; border:1px solid var(--line); border-radius:8px;" />
+                <div id="custWhatsHint" style="font-size:0.85rem; color:#b23; display:none; margin-top:6px;">Enter a Pakistani number like 03XXXXXXXXX or +92XXXXXXXXXX</div>
+
+                <label style="display:block; font-weight:600; margin-top:8px;">Delivery address</label>
+                <textarea id="custAddress" rows="2" style="width:100%; padding:10px; border:1px solid var(--line); border-radius:8px;"></textarea>
+
+                <label style="display:block; font-weight:600; margin-top:8px;">Additional notes</label>
+                <textarea id="custNotes" rows="2" style="width:100%; padding:10px; border:1px solid var(--line); border-radius:8px;"></textarea>
+
+                <div style="margin-top:12px; text-align:right;">
+                  <button id="confirmOrderBtn" class="buy-now-btn" style="display:none;">Confirm Order</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        document.body.appendChild(customerPanel);
+
+        // wire quick-add controls
+        const quickAddToggle = document.getElementById('quickAdd');
+        const quickName = document.getElementById('quickProductName');
+        const qSmall = document.getElementById('quickSizeSmall');
+        const qLarge = document.getElementById('quickSizeLarge');
+        const qQty = document.getElementById('quickQty');
+        const qAdd = document.getElementById('quickAddBtn');
+
+        let quickSelectedSize = null;
+        function quickSelectSize(size) {
+          quickSelectedSize = size;
+          qSmall.classList.toggle('selected-size', size === 'Small');
+          qLarge.classList.toggle('selected-size', size === 'Large');
+        }
+
+        qSmall.addEventListener('click', () => quickSelectSize('Small'));
+        qLarge.addEventListener('click', () => quickSelectSize('Large'));
+
+        qAdd.addEventListener('click', () => {
+          if (!currentProduct) return alert('No product selected');
+          if (!quickSelectedSize) return alert('Please choose size');
+          const qty = Math.max(1, parseInt(qQty.value || '1'));
+          const unitPrice = (quickSelectedSize === 'Small' ? Number(currentProduct.small) : Number(currentProduct.large)) || 0;
+          cart.push({ name: currentProduct.name, subtitle: currentProduct.subtitle, size: quickSelectedSize, qty, unitPrice, image: currentProduct.image });
+          updateCartUI();
+          // keep quickAdd visible for adding more, reset qty
+          qQty.value = '1';
+        });
+
+        // customer panel wiring
+        const closeCustomerBtn = document.getElementById('closeCustomerBtn');
+        const confirmOrderBtnEl = document.getElementById('confirmOrderBtn');
+        const custName = document.getElementById('custName');
+        const custWhats = document.getElementById('custWhatsApp');
+        const custAddress = document.getElementById('custAddress');
+        const custNotes = document.getElementById('custNotes');
+
+        // Input sanitization: name -> letters & spaces only; whatsapp -> digits only
+        if (custName) {
+          custName.addEventListener('input', (e) => {
+            const cleaned = e.target.value.replace(/[^A-Za-z\s]/g, '');
+            if (e.target.value !== cleaned) e.target.value = cleaned;
+            updateConfirmBtnVisibility();
+          });
+        }
+        const sanitizeNumberInput = (el) => {
+          if (!el) return;
+          el.addEventListener('input', (e) => {
+            const cleaned = e.target.value.replace(/\D+/g, '');
+            if (e.target.value !== cleaned) e.target.value = cleaned;
+            updateConfirmBtnVisibility();
+          });
+        };
+        sanitizeNumberInput(custWhats);
+        const customerCartItemsEl = document.getElementById('customerCartItems');
+        const customerCartTotalEl = document.getElementById('customerCartTotal');
+
+        function renderCustomerCart() {
+          if (!customerCartItemsEl) return;
+          if (cart.length === 0) {
+            customerCartItemsEl.innerHTML = '<p style="color:var(--muted)">No items in cart.</p>';
+            if (customerCartTotalEl) customerCartTotalEl.textContent = 'Total: Rs. 0';
+            return;
+          }
+          let total = 0;
+          customerCartItemsEl.innerHTML = cart.map((it, idx) => {
+            const subtotal = it.qty * it.unitPrice;
+            total += subtotal;
+            return `
+              <div style="display:flex; justify-content:space-between; gap:12px; padding:8px 0; border-bottom:1px dashed var(--line);">
+                <div style="flex:1">
+                  <div style="font-weight:700">${it.name}</div>
+                  <div style="font-size:0.9rem; color:var(--muted)">${it.subtitle}</div>
+                  <div style="font-size:0.9rem; margin-top:6px">${it.size} × ${it.qty} • Rs. ${it.unitPrice} each</div>
+                </div>
+                <div style="text-align:right; min-width:90px">
+                  <div style="font-weight:700">Rs. ${subtotal}</div>
+                </div>
+              </div>
+            `;
+          }).join('');
+          if (customerCartTotalEl) customerCartTotalEl.textContent = `Total: Rs. ${total}`;
+        }
+
+        function updateConfirmBtnVisibility() {
+          if (!confirmOrderBtnEl) return;
+          const nameFilled = custName && custName.value.trim().length > 0;
+          const whatsRaw = custWhats ? custWhats.value.trim() : '';
+          const normalized = typeof normalizePakNumber === 'function' ? normalizePakNumber(whatsRaw) : null;
+          const hintEl = document.getElementById('custWhatsHint');
+          if (hintEl) hintEl.style.display = normalized ? 'none' : (whatsRaw.length > 0 ? 'block' : 'none');
+          if (nameFilled && normalized !== null && cart.length > 0 && custAddress && custAddress.value.trim().length > 0) {
+            confirmOrderBtnEl.style.display = 'inline-block';
+          } else {
+            confirmOrderBtnEl.style.display = 'none';
+          }
+        }
+
+        [custName, custWhats, custAddress, custNotes].forEach((el) => {
+          if (el) el.addEventListener('input', updateConfirmBtnVisibility);
+        });
+
+        closeCustomerBtn.addEventListener('click', closeCustomerPanel);
+        if (confirmOrderBtnEl) confirmOrderBtnEl.addEventListener('click', () => {
+                  // validate WhatsApp as Pakistani number and ensure address present
+          const rawWhats = custWhats ? custWhats.value.trim() : '';
+                  const addressVal = custAddress ? custAddress.value.trim() : '';
+                  const normalized = typeof normalizePakNumber === 'function' ? normalizePakNumber(rawWhats) : null;
+                  if (!normalized || !addressVal) { alert('Please enter a valid Pakistani WhatsApp number and a delivery address (required)'); return; }
+                  // save customer info (store normalized WhatsApp e.g. 923XXXXXXXXX)
+                  customerInfo = {
+                    name: custName ? custName.value.trim() : '',
+                    whatsapp: normalized,
+                    address: addressVal,
+                    notes: custNotes ? custNotes.value.trim() : ''
+                  };
+                  // send order
+                  placeOrder();
+                });
+      }
+
+      function toggleCartPanel() {
+        const panel = document.getElementById('cartPanel');
+        if (!panel) return;
+        panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+      }
+
+      function updateCartUI() {
+        const badge = document.getElementById('cartBadge');
+        const itemsEl = document.getElementById('cartItems');
+        const totalEl = document.getElementById('cartTotal');
+        if (badge) {
+          const totalQty = cart.reduce((s, i) => s + i.qty, 0);
+          badge.textContent = totalQty;
+        }
+        if (itemsEl) {
+          if (cart.length === 0) {
+            itemsEl.innerHTML = '<p style="padding:12px; color:var(--muted);">Your cart is empty.</p>';
+          } else {
+            let total = 0;
+            itemsEl.innerHTML = cart.map((it, idx) => {
+              const subtotal = it.qty * it.unitPrice;
+              total += subtotal;
+              return `
+              <div class="cart-item" data-idx="${idx}" style="display:flex; gap:8px; align-items:center; padding:10px 8px; border-bottom:1px solid var(--line);">
+                <img src="${it.image}" alt="${it.name}" style="width:56px; height:56px; object-fit:cover; border-radius:8px;" />
+                <div style="flex:1">
+                  <div style="font-weight:700">${it.name}</div>
+                  <div style="font-size:0.9rem; color:var(--muted)">${it.subtitle}</div>
+                  <div style="font-size:0.9rem; margin-top:6px">${it.size} × ${it.qty} • Rs. ${it.unitPrice} each</div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font-weight:700">Rs. ${subtotal}</div>
+                  <button class="remove-cart-item" style="background:transparent; border:0; color:var(--muted); font-size:1.1rem;">Remove</button>
+                </div>
+              </div>
+            `;
+            }).join('');
+
+            // attach remove handlers
+            document.querySelectorAll('.cart-item').forEach((el) => {
+              const idx = Number(el.getAttribute('data-idx'));
+              const btn = el.querySelector('.remove-cart-item');
+              if (btn) btn.addEventListener('click', () => {
+                cart.splice(idx, 1);
+                updateCartUI();
+              });
+            });
+
+            if (totalEl) totalEl.textContent = `Total: Rs. ${total}`;
+          }
+        }
+      }
+
+      function openCustomerPanel() {
+        // open customer panel overlay; prefill if customerInfo exists and render cart
+        const panel = document.getElementById('customerPanel');
+        if (!panel) return alert('Customer panel not available');
+        // close/hide the cart panel so only customer panel remains
+        const cartPanel = document.getElementById('cartPanel');
+        if (cartPanel) cartPanel.style.display = 'none';
+        // ensure customer panel is visible and apply the .open class so CSS transitions/visibility work
+        panel.style.display = 'flex';
+        panel.classList.add('open');
+        const custName = document.getElementById('custName');
+        const custWhats = document.getElementById('custWhatsApp');
+        const custAddress = document.getElementById('custAddress');
+        const custNotes = document.getElementById('custNotes');
+        if (customerInfo) {
+          if (custName) custName.value = customerInfo.name || '';
+          if (custWhats) custWhats.value = customerInfo.whatsapp || '';
+          if (custAddress) custAddress.value = customerInfo.address || '';
+          if (custNotes) custNotes.value = customerInfo.notes || '';
+        }
+        // render cart inside customer panel for confirmation
+        const customerCartItemsEl = document.getElementById('customerCartItems');
+        const customerCartTotalEl = document.getElementById('customerCartTotal');
+        if (customerCartItemsEl) {
+          if (cart.length === 0) {
+            customerCartItemsEl.innerHTML = '<p style="color:var(--muted)">Your cart is empty.</p>';
+            if (customerCartTotalEl) customerCartTotalEl.textContent = 'Total: Rs. 0';
+          } else {
+            let total = 0;
+            customerCartItemsEl.innerHTML = cart.map((it, idx) => {
+              const subtotal = it.qty * it.unitPrice;
+              total += subtotal;
+              return `
+                <div style="display:flex; justify-content:space-between; gap:12px; padding:8px 0; border-bottom:1px dashed var(--line);">
+                  <div style="flex:1">
+                    <div style="font-weight:700">${it.name}</div>
+                    <div style="font-size:0.9rem; color:var(--muted)">${it.subtitle}</div>
+                    <div style="font-size:0.9rem; margin-top:6px">${it.size} × ${it.qty} • Rs. ${it.unitPrice} each</div>
+                  </div>
+                  <div style="text-align:right; min-width:90px">
+                    <div style="font-weight:700">Rs. ${subtotal}</div>
+                  </div>
+                </div>
+              `;
+            }).join('');
+            if (customerCartTotalEl) customerCartTotalEl.textContent = `Total: Rs. ${total}`;
+          }
+        }
+        // update confirm button visibility
+        const confirmOrderBtnEl = document.getElementById('confirmOrderBtn');
+        if (confirmOrderBtnEl) {
+          if (custName && custWhats && custName.value.trim().length > 0 && custWhats.value.trim().length > 0 && cart.length > 0) {
+            confirmOrderBtnEl.style.display = 'inline-block';
+          } else {
+            confirmOrderBtnEl.style.display = 'none';
+          }
+        }
+      }
+
+      function closeCustomerPanel() {
+        const panel = document.getElementById('customerPanel');
+        if (!panel) return;
+        // remove the open class to allow CSS fade-out, then hide after transition
+        panel.classList.remove('open');
+        setTimeout(() => {
+          panel.style.display = 'none';
+        }, 260);
+      }
+
+      function placeOrder() {
+        if (cart.length === 0) { alert('Cart is empty'); return; }
+        let total = 0;
+        const lines = ['New order from website:'];
+        if (customerInfo) {
+          lines.push('Customer details:');
+          if (customerInfo.name) lines.push(`Name: ${customerInfo.name}`);
+          if (customerInfo.whatsapp) lines.push(`WhatsApp: ${customerInfo.whatsapp}`);
+          if (customerInfo.address) lines.push(`Address: ${customerInfo.address}`);
+          if (customerInfo.notes) lines.push(`Notes: ${customerInfo.notes}`);
+          lines.push('');
+        }
+        cart.forEach((it, i) => {
+          const subtotal = it.qty * it.unitPrice;
+          total += subtotal;
+          lines.push(`${i+1}. ${it.name} (${it.subtitle}) - ${it.size} x${it.qty} @ Rs. ${it.unitPrice} = Rs. ${subtotal}`);
+          const imageUrl = window.location.origin + '/' + it.image.replace(/^\/+/, '');
+          lines.push(`   Image: ${imageUrl}`);
+        });
+        lines.push(`Total: Rs. ${total}`);
+        const message = encodeURIComponent(lines.join('\n'));
+        window.open(`https://wa.me/923187718189?text=${message}`, '_blank');
+        // clear
+        cart = [];
+        updateCartUI();
+        toggleCartPanel();
+        closeCustomerPanel();
+      }
+
+      // initialize cart UI
+      createCartUI();
+      updateCartUI();
+
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) closeModal();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.classList.contains('open')) {
+          closeModal();
+        }
+      });
+
+      // Initial render
+      renderProducts('soap');
+    </script>
+  </body>
+</html>
